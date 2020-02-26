@@ -1,0 +1,202 @@
+//**********************Matrix rotation*************************************
+class Matrix {
+
+  constructor(n){
+    this.m = [];
+    var z = 0;
+    for (let i = 0; i < n; ++i) {
+      this.m[i] = [];
+      for (let j = 0; j < n; ++j) {
+        this.m[i][j] = z;
+        z++;
+      }
+    }
+  }
+
+  printMatrix() {
+   console.log(this.m);
+  }
+
+  rotateMatrix() {    
+    const n = this.m[0].length;
+
+    let res = []
+
+    for (let i = 0; i < n; ++i) {
+      for (let j = 0; j < n; ++j) {
+         if (!res[j])
+           res[j] = []
+         res[j][i] = this.m[n-1-i][j];
+      }
+    }
+    return res;
+  }
+}
+
+let m = new Matrix(5);
+m.printMatrix();
+let t0 = performance.now();
+console.log(m.rotateMatrix());
+let t1 = performance.now();
+
+**********************************************Extra long Factorial********************************
+function extraLongFactorials(n) {
+    let fact = 1;
+
+    for (let i = 2; i <= n; i++){
+
+        if(Number.isSafeInteger(fact*i)){
+            fact = fact * i;
+        }
+        else {
+           
+            let factorial = "0"; 
+            for(let j = 0; j < i; j++){
+                factorial = add(factorial,fact.toString());  
+            }
+            fact = factorial; 
+        }
+    }
+
+    return fact;
+}
+
+
+console.log(extraLongFactorials(25));  
+
+console.log(extraLongFactorials(34));
+
+**************************************Diagonal Difference*******************************
+function processData(input) {
+    inputAll = input.split("\n");
+    var currLine = 0;
+    var number_Values = parseInt(inputAll[currLine].trim(), 10);
+
+    currLine = 1;
+    var FirstDiagonal = 0;
+    var SecondDiagonal = 0;
+    var diff = 0;
+    for(currLine = 1 ; currLine <= number_Values ; currLine++)
+        {
+            var inputs = inputAll[currLine];
+            var inputArray = inputs.split(" ");
+
+
+            for(var i=0 ; i<=(number_Values-1);i++)
+                {
+                    if(i == (currLine - 1))
+                        {
+
+                            FirstDiagonal = FirstDiagonal + parseInt(inputArray[i]);
+                        }
+                }
+
+            for(var j=(number_Values-1) ; j>=0;j--)
+                {
+                    if(j ==  ( (number_Values - 1) - (currLine - 1)))
+                        {
+
+                            SecondDiagonal = SecondDiagonal + parseInt(inputArray[j]);
+                        }
+                }
+
+        }
+    diff = FirstDiagonal - SecondDiagonal;
+    diff = Math.abs(diff);
+    process.stdout.write(diff);
+}
+
+//**************************Time Conversion*****************************
+(function() {
+
+  function tConvert(time) {
+    time = time.toString().match(/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
+    if (time.length > 1) { 
+      time = time.slice(1); 
+      time[5] = +time[0] < 12 ? 'AM' : 'PM'; 
+      time[0] = +time[0] % 12 || 12; 
+    }
+    return time.join(''); 
+  }
+
+  var tel = document.getElementById('tests');
+
+  tel.innerHTML = tel.innerHTML.split(/\r*\n|\n\r*|\r/).map(function(v) {
+    return v ? v + ' => "' + tConvert(v.trim()) + '"' : v;
+  }).join('\n');
+})();
+
+//**************************Time Conversion*****************************
+(function() {
+
+  function tConvert(time) {
+    time = time.toString().match(/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
+    if (time.length > 1) { 
+      time = time.slice(1); 
+      time[5] = +time[0] < 12 ? 'AM' : 'PM'; 
+      time[0] = +time[0] % 12 || 12; 
+    }
+    return time.join(''); 
+  }
+
+  var tel = document.getElementById('tests');
+
+  tel.innerHTML = tel.innerHTML.split(/\r*\n|\n\r*|\r/).map(function(v) {
+    return v ? v + ' => "' + tConvert(v.trim()) + '"' : v;
+  }).join('\n');
+})();
+
+
+********************************************Compare the triplets*********************************************
+ function compareTriplets(a, b) {
+    let p1 = 0, p2 = 0, aliceScore = 0, bobScore = 0;
+    while (p1 < a.length && p2 < b.length) {
+        if (a[p1] > b[p2]) {
+            aliceScore += 1;
+            p1 += 1;
+            p2 += 1;
+        } else if (a[p1] < b[p2]) {
+            bobScore += 1;
+            p1 += 1;
+            p2 += 1;
+            
+        } else {
+            p1 += 1;
+            p2 += 1;
+        }
+    }
+    return [aliceScore, bobScore];
+
+}
+compareTriplets([10,59,88],[99 ,36, 44]);
+*****************************************************End Of Day************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
