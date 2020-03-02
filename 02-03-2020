@@ -1,0 +1,36 @@
+//***********************************************Plus Minus Problem*****************************************
+const readline=require("readline");
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+  console.log("Enter the size and elements with spaces : ");
+  rl.on('line', (input) => {
+    //console.log(`Received: ${input}`);
+    var elements=input.split(" ");
+    let size=elements[0];
+    let positiveCount=0, negativeCount=0,zeroCount=0;
+    console.log("Size of Array : "+size)
+    for(val=1;val<=size+1;val++)
+    {
+        if(elements[val]>0)
+        {
+            positiveCount++;
+        }
+        else if(elements[val]<0)
+        {
+            negativeCount++;
+        }
+        else
+        {
+            zeroCount++;
+        }
+        
+    }
+    number.toPrecision()
+    console.log(positiveCount/size+"\n"+negativeCount/size+"\n"+zeroCount/size);
+    process.exit();
+});
+
+//**********************************************End Of The Day**********************************************************
