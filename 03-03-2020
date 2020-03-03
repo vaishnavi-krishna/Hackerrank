@@ -16,5 +16,54 @@ const rl = readline.createInterface({
     console.log("The Biggest Factorial : "+bigInt(factorial));
     process.exit();
 });
-
+//**************************************Append and Delete**************************************
+const readline = require('readline');
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+  console.log("Enter the names and size with spaces : "); //eg:- hackerhappy hackerrank 9
+  //kindly give input as given example.
+  rl.on('line', (input) => {
+      var names=input.split(" ");
+     if(names.length==3)
+     {
+         var size=names[2];
+         if(names[1]==names[0])
+         {
+             console.log("YES");
+             exit();
+         }
+         else{
+             var length1=names[0].length;
+             var value1=names[0].split("");
+             var length2=names[1].length;
+             var value2=names[1].split("");
+             var count=0;
+             for(val=0;val<length1;val++)
+             {
+                if(value1[val]==value2[val]){
+                    count++;
+                }
+                else
+                {
+                    break;
+                }
+                var data2=length2-count;
+                if(data2+count==size)
+                {
+                    console.log("YES");
+                }
+                else{
+                    console.log('NO');
+                }
+             }
+         }
+         process.exit();
+     }
+     else{
+         console.log("Kindly enter values as :- [names1 names2 number ]")
+         process.exit();
+     }
+});
 //***********************************End of the day*********************************************
