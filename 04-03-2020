@@ -70,4 +70,62 @@ const rl = readline.createInterface({
      process.exit();
   });
   
+ //*********************** Chess Board Alignment ************************************************************/
+const readline = require('readline');
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+  var count=0;
+  console.log("Use only binary numbers like 0 or 1")
+  console.log("Enter the size and elements of the array with spaces : "); //eg:- size like 4,5,6 ....
+  rl.on('line', (input) => {
+     var elements=input.split(" ");
+     var size=elements[0];
+     for(arr=1;arr<size*size;arr++)
+     {
+         if(size%2==0)
+         {
+             if(elements[arr]!=elements[arr+1] && arr<size*size)
+             {
+               if(arr%size==0 && elements[arr-1]==elements[arr])
+               {
+                 if(arr==(size*size)-1)
+                 {
+                    console.log("True");
+                 }
+                   
+               }
+               else{
+
+                    console.log("False");
+                    break;
+               }
+            }
+        else
+        {
+               console.log("False");
+              
+        }
+     }
+         else
+         {
+            
+            if(elements[arr]!=elements[arr+1] && arr<size*size)
+            {
+               if(arr==(size*size)-1)
+               {
+                   console.log("True");
+               }
+            }
+            else{
+                console.log("False");
+               
+            }
+             
+        }
+    }
+             
+     process.exit();
+  });
  //*******************************************End Of Day*********************************************************
