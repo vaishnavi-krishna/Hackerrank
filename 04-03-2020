@@ -1,0 +1,35 @@
+//***********************************************Divisible Sum Pairs*********************************
+
+const readline=require("readline");
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+  var count=0;
+  console.log("Enter the size and divisible number and elements of the array with spaces : "); 
+  rl.on('line', (input) => {
+     var Data=input.split(" ");
+       var size = Data[0];
+       var number=Data[1];
+       for(val=2;val<size+2;val++)
+       {
+            var temp=Data[val];
+            for(val1=val+1;val1<size+2;val1++)
+            {
+                 var temp1=temp+Data[val1];
+                 if(temp1%number==0)
+                 {
+                      count++;
+                 }
+            }
+            if(val==size+1)
+            {
+                 console.log("The number of pairs : "+count);
+            }
+
+       }
+       process.exit();
+  });
+  
+ //*******************************************End Of Day*********************************************************
