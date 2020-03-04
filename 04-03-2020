@@ -32,4 +32,42 @@ const rl = readline.createInterface({
        process.exit();
   });
   
+ //***************************************************Migratory birds ****************************************/
+const readline = require('readline');
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+  var count=0;
+  console.log("Enter the size and elements of the array with spaces : "); 
+  rl.on('line', (input) => {
+     var elements=input.split(" ");
+     var size=elements[0];
+     var max=0;
+     var value=0;
+     var cnt=0;
+     for(val=1;val<=size;val++)
+     {
+         var temp=elements[val];
+         for(arr=val+1;arr<=size;arr++)
+         {
+             if(temp==elements[arr])
+             {
+                 cnt++;
+             }
+             if(arr==size && cnt>max)
+             {
+                 max=cnt;
+                 value=elements[val];
+             }
+         }
+         cnt=0;
+         if(val==size)
+         {
+             console.log("The Highest Frequency Element is : "+value);
+         }
+     }
+     process.exit();
+  });
+  
  //*******************************************End Of Day*********************************************************
