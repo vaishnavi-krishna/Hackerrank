@@ -7,26 +7,25 @@ const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
   });
-  var count=0;
+
   console.log("Enter the number : "); 
   rl.on('line', (input) => {
-       let val=1;
-       let temp=input;
-       for(let val1=0;val1<input;val1++)
-       {
-            for(let val2=0;val2<temp-1;val2++)
-            {
-                 console.log(" ");
-            }
-            for(let val3=0;val3<val1+1;val++)
-            {
-                 console.log("#"+" ");
-            }
-            temp--;
-            console.log("\n");
-
-       }
-       process.exit();
+      let temp="";
+      let temp1="";
+      for(let i=input;i>=1;i--)
+     {
+         for(let j=1;j<i;j++)
+        {
+           temp=temp+" ";
+        }
+        for(let k=input;k>=i;k--)
+        {
+            temp1+="#"+" ";
+        }
+       console.log(temp+temp1);
+      temp="";
+      temp1="";
+    }
+     process.exit(); 
   });
- 
 //**************************************End Of Day****************************************
