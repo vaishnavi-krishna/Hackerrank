@@ -1,0 +1,32 @@
+//**************************************Staircase Problem**********************************
+
+
+const readline=require("readline");
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+  var count=0;
+  console.log("Enter the number : "); 
+  rl.on('line', (input) => {
+       let val=1;
+       let temp=input;
+       for(let val1=0;val1<input;val1++)
+       {
+            for(let val2=0;val2<temp-1;val2++)
+            {
+                 console.log(" ");
+            }
+            for(let val3=0;val3<val1+1;val++)
+            {
+                 console.log("#"+" ");
+            }
+            temp--;
+            console.log("\n");
+
+       }
+       process.exit();
+  });
+ 
+//**************************************End Of Day****************************************
