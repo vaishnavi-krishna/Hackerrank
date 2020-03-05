@@ -28,4 +28,38 @@ const rl = readline.createInterface({
     }
      process.exit(); 
   });
+
+//**************************** Array circular rotation ***********************
+const readline=require("readline");
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+   let val = (elements)=>{
+       
+        let temp=elements[(elements.length)-1];
+        elements.pop();
+        elements.unshift(temp);
+         return elements;
+     }
+  console.log("Enter the numbers with spaces and end enter the number of rotations : "); 
+  rl.on('line', (input) => {
+     let elements = input.split(" ");
+     let rotate=elements[(elements.length)-1];
+     elements.pop();
+     for(let rot=0;rot<rotate;rot++)
+     {
+     let value=val(elements);
+     if(rot==rotate-1){
+     for(let val=0;val<value.length;val++)
+     {
+         console.log(value[val]);
+     }
+     }
+     }
+     
+     process.exit(); 
+  });
+  
 //**************************************End Of Day****************************************
