@@ -151,4 +151,40 @@ const rl = readline.createInterface({
     }
     process.exit();
 });
- //*******************************************End Of Day*********************************************************
+
+//*************************************************Beautiful days At movies************************
+
+const readline=require("readline");
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+  var count=0;
+  console.log("Enter the size and divisible number and elements of the array with spaces : "); 
+  rl.on('line', (input) => {
+     var elements = input.split(" ");
+     var startValue = elements[0];
+     var endValue = elements[1];
+     var number = elements[2];
+     console.log(startValue+" : "+endValue);
+     for(val=startValue;val<=endValue;val++)
+     {
+        var revNumber = 0,n;
+        while (val) {
+        n = val % 10;
+        val = Math.floor(val / 10);
+        revNumber *= 10;
+        revNumber += n;
+       }
+       var temp=revNumber;
+       
+       var diff=Math.abs(temp-val);
+       var result=diff/number;
+       console.log("Original Number : "+(element[0]++)+" Reverse Number : "+revNumber+" Absolute Difference divided by given number "+number+" : "+result);
+
+    }
+       
+       process.exit();
+  });
+  //*******************************************End Of Day*********************************************************
