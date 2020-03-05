@@ -6,15 +6,16 @@ const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
   });
-  var count=0;
+  
   console.log("Enter the size and divisible number and elements of the array with spaces : "); 
   rl.on('line', (input) => {
-     var Data=input.split(" ");
-       var size = Data[0];
-       var number=Data[1];
+     let Data=input.split(" ");
+       let size = Data[0];
+       let number=Data[1];
+       let count=0
        for(val=2;val<size+2;val++)
        {
-            var temp=Data[val];
+            let temp=Data[val];
             for(val1=val+1;val1<size+2;val1++)
             {
                  var temp1=temp+Data[val1];
@@ -38,17 +39,17 @@ const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
   });
-  var count=0;
+  
   console.log("Enter the size and elements of the array with spaces : "); 
   rl.on('line', (input) => {
-     var elements=input.split(" ");
-     var size=elements[0];
-     var max=0;
-     var value=0;
-     var cnt=0;
+     let elements=input.split(" ");
+     let size=elements[0];
+     let max=0;
+     let value=0;
+     let cnt=0;
      for(val=1;val<=size;val++)
      {
-         var temp=elements[val];
+         let temp=elements[val];
          for(arr=val+1;arr<=size;arr++)
          {
              if(temp==elements[arr])
@@ -76,12 +77,12 @@ const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
   });
-  var count=0;
+  
   console.log("Use only binary numbers like 0 or 1")
   console.log("Enter the size and elements of the array with spaces : "); //eg:- size like 4,5,6 ....
   rl.on('line', (input) => {
-     var elements=input.split(" ");
-     var size=elements[0];
+     let elements=input.split(" ");
+     let size=elements[0];
      for(arr=1;arr<size*size;arr++)
      {
          if(size%2==0)
@@ -138,9 +139,9 @@ const rl = readline.createInterface({
   });
   console.log("Enter the starting limit and ending limit numbers with spaces : "); //eg:- 2000 3000...
   rl.on('line', (input) => {
-    var elements=input.split(" ");
-    var startLimit=elements[0];
-    var endLimit=elements[1];
+    let elements=input.split(" ");
+    let startLimit=elements[0];
+    let endLimit=elements[1];
     console.log("Leap Years from "+startLimit+" to "+endLimit);
     for(val=startLimit;val<=endLimit;val++)
     {
@@ -160,27 +161,25 @@ const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
   });
-  var count=0;
-  console.log("Enter the size and divisible number and elements of the array with spaces : "); 
+   console.log("Enter the size and divisible number and elements of the array with spaces : "); 
   rl.on('line', (input) => {
-     var elements = input.split(" ");
-     var startValue = elements[0];
-     var endValue = elements[1];
-     var number = elements[2];
+     let elements = input.split(" ");
+     let startValue = elements[0];
+     let endValue = elements[1];
+     let number = elements[2];
      console.log(startValue+" : "+endValue);
      for(val=startValue;val<=endValue;val++)
      {
-        var revNumber = 0,n;
+        let revNumber = 0,n;
         while (val) {
         n = val % 10;
         val = Math.floor(val / 10);
         revNumber *= 10;
         revNumber += n;
        }
-       var temp=revNumber;
-       
-       var diff=Math.abs(temp-val);
-       var result=diff/number;
+       let temp=revNumber;
+       let diff=Math.abs(temp-val);
+        let  result=diff/number;
        console.log("Original Number : "+(element[0]++)+" Reverse Number : "+revNumber+" Absolute Difference divided by given number "+number+" : "+result);
 
     }
