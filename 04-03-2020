@@ -128,4 +128,27 @@ const rl = readline.createInterface({
              
      process.exit();
   });
+  
+  //***********************************************************Leap Years********************************************** */
+const readline=require("readline");
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+  console.log("Enter the starting limit and ending limit numbers with spaces : "); //eg:- 2000 3000...
+  rl.on('line', (input) => {
+    var elements=input.split(" ");
+    var startLimit=elements[0];
+    var endLimit=elements[1];
+    console.log("Leap Years from "+startLimit+" to "+endLimit);
+    for(val=startLimit;val<=endLimit;val++)
+    {
+      if(val%4==0)
+      {
+         console.log(val+" ");
+      }
+    }
+    process.exit();
+});
  //*******************************************End Of Day*********************************************************
