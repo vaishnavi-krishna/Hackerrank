@@ -28,7 +28,32 @@ const rl = readline.createInterface({
     }
      process.exit(); 
   });
+//******************************************A very Big Sum************************* */
+const readline=require("readline");
+let bigInt = require("big-integer");
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+  let val=(elements,size)=>{
+      let sum=0;
+      for(let value=0;value<size;value++)
+      {   
+         
+          sum=sum+bigInt(parseInt(elements[value],10));
+      }
+      return sum;
+  }
+  console.log("Enter the array elements : ");
+  rl.on('line', (input) => {
+      let elements=input.split(" ");
+      let size=elements.length;
+   
+      console.log("The Sum of the array : "+val(elements,size));
 
+       process.exit();
+  });
+ 
 //**************************** Array circular rotation ***********************
 const readline=require("readline");
 
