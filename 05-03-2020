@@ -61,5 +61,30 @@ const rl = readline.createInterface({
      
      process.exit(); 
   });
-  
-//**************************************End Of Day****************************************
+  //******************************************************Array Addition***************************************
+  const readline=require("readline");
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+  let val=(elements,size)=>{
+      let sum=0;
+      for(let value=0;value<size;value++)
+      {   
+         
+          sum=sum+parseInt(elements[value],10);
+      }
+      return sum;
+  }
+  console.log("Enter the array elements : "); 
+  rl.on('line', (input) => {
+      let elements=input.split(" ");
+      let size=elements.length;
+   
+      console.log("The Sum of the array : "+val(elements,size));
+
+       process.exit();
+  });
+ 
+//**************************************End Of Day*************************************************************
