@@ -1,1 +1,26 @@
+//****************************************** CamelCase ************************************/
+const readline = require('readline');
+const rl = readline.createInterface({
+    input : process.stdin,
+    output : process.stdout
+});
+ 
+          rl.on('line', (input) => {
+              let count=1;
+             
+            for(let val=0;val<input.length;val++)
+            {
+                let letter=input.charAt(val);
+              
+                if(letter>='A' && letter<='Z')
+                {
+                    count++;
+                }
+
+            }
+            console.log("The total number of words : "+count);
+
+          });
+          
+
 //********************************************************End Of Day******************************************
