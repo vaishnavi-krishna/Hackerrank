@@ -67,5 +67,26 @@ const readline = require('readline');
      console.log("The Factorial of "+input+ " : "+val(parseInt(input)));
 
  });
- 
+ //*****************************************************Mininum Loss [MEDIUM] ************************************
+ const readline = require('readline');
+
+ const rl=readline.createInterface({
+     input: process.stdin,
+     output: process.stdout
+ });
+ let result = (elementsArray,size)=>{
+     var diff=0;
+     for(data=1;data<=size;data++)
+     {
+           diff=Math.abs(elementsArray[data]-diff);
+     }
+     return diff;
+ }
+ console.log("Enter the size and numbers in array with spaces : "); //eg1:- [5 20 7 8 2 5] eg2:- [3 5 10 3]
+ rl.on('line', (input) => {
+     let elements=input.split(" ");
+     let size=elements[0];
+     console.log("The minimum loss : "+result(elements,size));
+
+ });
  //***************************************************End of Day ***************************************************
