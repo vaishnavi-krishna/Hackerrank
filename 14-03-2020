@@ -1,0 +1,29 @@
+const readline = require('readline');
+ const rl=readline.createInterface({
+     input: process.stdin,
+     output: process.stdout
+ });
+
+ let connect = (data)=>{
+    var temp="";
+    for(val in data)
+    {
+        temp+=data[val];
+    }
+    return temp;
+ }
+console.log("Enter the string with spaces : ");
+ rl.on('line', (input) => {
+    let Data = input.split(" ");
+    let stringWithoutSpaces = connect(Data);
+    let size=parseInt(stringWithoutSpaces.length);
+    let row=Math.floor(Math.sqrt(size));
+    let column=Math.ceil(Math.sqrt(size));
+    for(val=0;val<row;val++)
+    {
+        console.log(stringWithoutSpaces.substring(row1,col1));
+        col1=column+col1;
+        row1=row+col1 ;
+    }
+    
+});
